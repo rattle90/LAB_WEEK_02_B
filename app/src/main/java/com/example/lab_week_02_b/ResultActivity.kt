@@ -10,6 +10,7 @@
     import androidx.constraintlayout.widget.ConstraintLayout
     import android.app.Activity
     import android.content.Intent
+    import android.widget.Button
 
     class ResultActivity : AppCompatActivity() {
         companion object {
@@ -38,6 +39,12 @@
                     findViewById<TextView>(R.id.color_code_result_message)
                 resultMessage.text = getString(R.string.color_code_result_message,
                     colorCode?.uppercase())
+
+                val backButton = findViewById<Button>(R.id.back_button)
+                backButton.setOnClickListener {
+                    // Balik ke MainActivity tanpa restart aplikasi
+                    finish()
+                }
             }
         }
     }
